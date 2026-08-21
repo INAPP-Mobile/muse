@@ -1,0 +1,92 @@
+{
+  "DISCORD_TOKEN": {
+    "name": "DISCORD_TOKEN",
+    "description": "Discord bot token from https://discord.com/developers/applications",
+    "isOptional": false,
+    "defaultValue": ""
+  },
+  "DISCORD_CLIENT_ID": {
+    "name": "DISCORD_CLIENT_ID",
+    "description": "Discord application client ID from Developer Portal",
+    "isOptional": false,
+    "defaultValue": ""
+  },
+  "DISCORD_CLIENT_SECRET": {
+    "name": "DISCORD_CLIENT_SECRET",
+    "description": "Discord application client secret from Developer Portal",
+    "isOptional": false,
+    "defaultValue": ""
+  },
+  "YOUTUBE_API_KEY": {
+    "name": "YOUTUBE_API_KEY",
+    "description": "YouTube Data API v3 key from https://console.developers.google.com/",
+    "isOptional": false,
+    "defaultValue": ""
+  },
+  "SPOTIFY_CLIENT_ID": {
+    "name": "SPOTIFY_CLIENT_ID",
+    "description": "Spotify API client ID (optional — enables Spotify URL conversion)",
+    "isOptional": true,
+    "defaultValue": ""
+  },
+  "SPOTIFY_CLIENT_SECRET": {
+    "name": "SPOTIFY_CLIENT_SECRET",
+    "description": "Spotify API client secret (optional — enables Spotify URL conversion)",
+    "isOptional": true,
+    "defaultValue": ""
+  },
+  "BOT_STATUS": {
+    "name": "BOT_STATUS",
+    "description": "Bot status: online, dnd, idle, invisible",
+    "isOptional": true,
+    "defaultValue": "online"
+  },
+  "BOT_ACTIVITY_TYPE": {
+    "name": "BOT_ACTIVITY_TYPE",
+    "description": "Bot activity type: PLAYING, STREAMING, LISTENING, WATCHING, COMPETING",
+    "isOptional": true,
+    "defaultValue": "LISTENING"
+  },
+  "BOT_ACTIVITY": {
+    "name": "BOT_ACTIVITY",
+    "description": "Bot activity text shown in the sidebar",
+    "isOptional": true,
+    "defaultValue": "music 🎵"
+  },
+  "DATA_DIR": {
+    "name": "DATA_DIR",
+    "description": "Data directory for bot cache and configuration",
+    "isOptional": true,
+    "defaultValue": "/data"
+  },
+  "TZ": {
+    "name": "TZ",
+    "description": "Container timezone (IANA name)",
+    "isOptional": true,
+    "defaultValue": "UTC"
+  },
+  "CACHE_LIMIT": {
+    "name": "CACHE_LIMIT",
+    "description": "Maximum disk cache size for downloaded media",
+    "isOptional": true,
+    "defaultValue": "2GB"
+  },
+  "YT_DLP_AUTO_UPDATE": {
+    "name": "YT_DLP_AUTO_UPDATE",
+    "description": "Automatically update yt-dlp on startup",
+    "isOptional": true,
+    "defaultValue": "true"
+  },
+  "ENABLE_SPONSORBLOCK": {
+    "name": "ENABLE_SPONSORBLOCK",
+    "description": "Skip sponsored segments in YouTube videos",
+    "isOptional": true,
+    "defaultValue": "false"
+  },
+  "PORT": {
+    "name": "PORT",
+    "description": "Port the health-check sidecar listens on",
+    "isOptional": true,
+    "defaultValue": "8080"
+  }
+}
