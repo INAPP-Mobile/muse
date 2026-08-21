@@ -1,36 +1,34 @@
 # syntax=docker/dockerfile:1
 # Muse Discord music bot — Railway template
-# 
-# Muse is a long-running bot with no HTTP interface. This template wraps
-# the upstream image with a Node.js health sidecar so Railway can monitor
-# liveness on PORT 8080.
+#
+# Muse is a long-running Discord bot with no HTTP interface. Railway requires a
+# reachable HTTP healthcheck, so this image wraps the upstream release with a
+# small Node.js health sidecar listening on $PORT.
+#
+# Storage: Muse uses SQLite (schema.prisma -> provider = "sqlite") with the
+# database and media cache living under $DATA_DIR. Attach a Railway Volume at
+# /data to persist them. A docker VOLUME instruction is deliberately NOT used:
+# the Railway builder rejects it ("docker VOLUME ... is not supported").
 
 FROM ghcr.io/museofficial/muse:2.11.7-yt-dlp
 
+# Upstream image sets WORKDIR /usr/app; dist/ and node_modules resolve from there.
+WORKDIR /usr/app
+
 ENV PORT=8080 \
     DATA_DIR=/data \
-    NODE_ENV=production
+    NODE_ENV=production \
+    BOT_PID_FILE=/tmp/muse-bot.pid
 
-# Install curl for HEALTHCHECK
-RUN apt-get update \
- && apt-get install -y --no-install-recommends curl \
- && rm -rf /var/lib/apt/lists/*
-
-# Health-check sidecar (Node.js already present in base image)
+# Health sidecar + entrypoint. No extra apt packages are needed: liveness is
+# probed in-process via process.kill(pid, 0) rather than shelling out to pgrep,
+# which is not present in the node:22-bookworm-slim base.
 COPY health-server.js /usr/local/bin/health-server.js
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/health-server.js
-
-# Persistent data dir for bot data (cache, config, db).
-# NOTE: no docker VOLUME instruction — Railway rejects it at build parse time
-# ("docker VOLUME ... is not supported, use Railway Volumes"). Persistence is
-# provided by a Railway Volume mounted at /data instead.
-RUN mkdir -p /data
+RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/health-server.js \
+ && mkdir -p /data
 
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=5 \
-  CMD curl -fsS http://127.0.0.1:8080/health -o /dev/null || exit 1
-
-# Use tini as init (already in base image) + custom entrypoint
+# tini is provided by the upstream base image and reaps the bot + sidecar.
 ENTRYPOINT ["tini", "--", "/usr/local/bin/entrypoint.sh"]

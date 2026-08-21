@@ -1,92 +1,68 @@
 {
   "DISCORD_TOKEN": {
     "name": "DISCORD_TOKEN",
-    "description": "Discord bot token from https://discord.com/developers/applications",
+    "description": "Discord bot token. Create an application at https://discord.com/developers/applications, add a Bot, then copy its token.",
     "isOptional": false,
     "defaultValue": ""
   },
   "DISCORD_CLIENT_ID": {
     "name": "DISCORD_CLIENT_ID",
-    "description": "Discord application client ID from Developer Portal",
-    "isOptional": false,
-    "defaultValue": ""
-  },
-  "DISCORD_CLIENT_SECRET": {
-    "name": "DISCORD_CLIENT_SECRET",
-    "description": "Discord application client secret from Developer Portal",
+    "description": "Discord application client ID (Developer Portal -> General Information -> Application ID). Used to build the bot invite link.",
     "isOptional": false,
     "defaultValue": ""
   },
   "YOUTUBE_API_KEY": {
     "name": "YOUTUBE_API_KEY",
-    "description": "YouTube Data API v3 key from https://console.developers.google.com/",
+    "description": "YouTube Data API v3 key from https://console.cloud.google.com/apis/credentials. Required for YouTube search and playback.",
     "isOptional": false,
     "defaultValue": ""
   },
   "SPOTIFY_CLIENT_ID": {
     "name": "SPOTIFY_CLIENT_ID",
-    "description": "Spotify API client ID (optional — enables Spotify URL conversion)",
+    "description": "Spotify API client ID. Optional — enables resolving Spotify tracks, albums and playlists.",
     "isOptional": true,
     "defaultValue": ""
   },
   "SPOTIFY_CLIENT_SECRET": {
     "name": "SPOTIFY_CLIENT_SECRET",
-    "description": "Spotify API client secret (optional — enables Spotify URL conversion)",
+    "description": "Spotify API client secret. Optional — required only if SPOTIFY_CLIENT_ID is set.",
     "isOptional": true,
     "defaultValue": ""
   },
+  "DATA_DIR": {
+    "name": "DATA_DIR",
+    "description": "Directory holding the SQLite database and audio cache. Must match the mount path of the attached Railway Volume.",
+    "isOptional": true,
+    "defaultValue": "/data"
+  },
+  "CACHE_LIMIT": {
+    "name": "CACHE_LIMIT",
+    "description": "Maximum disk space used by the audio cache, e.g. 2GB. Keep below your Railway Volume size.",
+    "isOptional": true,
+    "defaultValue": "2GB"
+  },
+  "ENABLE_SPONSORBLOCK": {
+    "name": "ENABLE_SPONSORBLOCK",
+    "description": "Set to true to skip non-music segments using SponsorBlock data.",
+    "isOptional": true,
+    "defaultValue": "false"
+  },
   "BOT_STATUS": {
     "name": "BOT_STATUS",
-    "description": "Bot status: online, dnd, idle, invisible",
+    "description": "Presence shown in Discord: online, dnd, idle or invisible.",
     "isOptional": true,
     "defaultValue": "online"
   },
   "BOT_ACTIVITY_TYPE": {
     "name": "BOT_ACTIVITY_TYPE",
-    "description": "Bot activity type: PLAYING, STREAMING, LISTENING, WATCHING, COMPETING",
+    "description": "Activity type: PLAYING, STREAMING, LISTENING, WATCHING or COMPETING.",
     "isOptional": true,
     "defaultValue": "LISTENING"
   },
   "BOT_ACTIVITY": {
     "name": "BOT_ACTIVITY",
-    "description": "Bot activity text shown in the sidebar",
+    "description": "Activity text shown next to the bot's presence in Discord.",
     "isOptional": true,
-    "defaultValue": "music 🎵"
-  },
-  "DATA_DIR": {
-    "name": "DATA_DIR",
-    "description": "Data directory for bot cache and configuration",
-    "isOptional": true,
-    "defaultValue": "/data"
-  },
-  "TZ": {
-    "name": "TZ",
-    "description": "Container timezone (IANA name)",
-    "isOptional": true,
-    "defaultValue": "UTC"
-  },
-  "CACHE_LIMIT": {
-    "name": "CACHE_LIMIT",
-    "description": "Maximum disk cache size for downloaded media",
-    "isOptional": true,
-    "defaultValue": "2GB"
-  },
-  "YT_DLP_AUTO_UPDATE": {
-    "name": "YT_DLP_AUTO_UPDATE",
-    "description": "Automatically update yt-dlp on startup",
-    "isOptional": true,
-    "defaultValue": "true"
-  },
-  "ENABLE_SPONSORBLOCK": {
-    "name": "ENABLE_SPONSORBLOCK",
-    "description": "Skip sponsored segments in YouTube videos",
-    "isOptional": true,
-    "defaultValue": "false"
-  },
-  "PORT": {
-    "name": "PORT",
-    "description": "Port the health-check sidecar listens on",
-    "isOptional": true,
-    "defaultValue": "8080"
+    "defaultValue": "music"
   }
 }

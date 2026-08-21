@@ -37,7 +37,7 @@ Railway provides compute, TLS at the edge, a public URL, and a persistent volume
 |------------|----------|-------------|
 | Discord bot token | Yes | From [Discord Developer Portal](https://discord.com/developers/applications) |
 | Discord client ID | Yes | Application ID from Developer Portal |
-| Discord client secret | Yes | Application secret from Developer Portal |
+| Discord client secret | No | Used for optional OAuth2 invite link generation |
 | YouTube API key | Yes | From [Google Cloud Console](https://console.developers.google.com/) |
 | Spotify client ID | No | Enables Spotify URL conversion |
 | Spotify client secret | No | Enables Spotify URL conversion |
