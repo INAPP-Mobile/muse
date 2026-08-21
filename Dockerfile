@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1
 # Muse Discord music bot — Railway template
 #
 # Muse is a long-running Discord bot with no HTTP interface. Railway requires a

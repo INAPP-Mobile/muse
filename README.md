@@ -1,6 +1,6 @@
 # Deploy and Host
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/TEMPLATE_CODE)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/wx22J0)
 
 ![Muse Discord Music Bot](https://raw.githubusercontent.com/INAPP-Mobile/muse/main/template-icon.svg)
 
@@ -31,7 +31,9 @@ Railway provides compute, TLS at the edge, a public URL, and a persistent volume
 - **Self-hosted alternative** — replace paid Discord music bots (Rythm, Groovy alternatives)
 - **Development/testing** — run a bot instance for testing Discord integrations
 
-## Dependencies for / Deployment Dependencies
+## Dependencies for Muse
+
+### Deployment Dependencies
 
 | Dependency | Required | Description |
 |------------|----------|-------------|
