@@ -1,6 +1,6 @@
 # Deploy and Host
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/wx22J0)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/muse-1)
 
 ![Muse Discord Music Bot](https://raw.githubusercontent.com/INAPP-Mobile/muse/master/template-icon.svg)
 
