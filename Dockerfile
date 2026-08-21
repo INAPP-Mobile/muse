@@ -21,8 +21,11 @@ COPY health-server.js /usr/local/bin/health-server.js
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/health-server.js
 
-# Persistent volume for bot data (cache, config, db)
-VOLUME ["/data"]
+# Persistent data dir for bot data (cache, config, db).
+# NOTE: no docker VOLUME instruction — Railway rejects it at build parse time
+# ("docker VOLUME ... is not supported, use Railway Volumes"). Persistence is
+# provided by a Railway Volume mounted at /data instead.
+RUN mkdir -p /data
 
 EXPOSE 8080
 
