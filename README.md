@@ -2,7 +2,7 @@
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/wx22J0)
 
-![Muse Discord Music Bot](https://raw.githubusercontent.com/INAPP-Mobile/muse/main/template-icon.svg)
+![Muse Discord Music Bot](https://raw.githubusercontent.com/INAPP-Mobile/muse/master/template-icon.svg)
 
 Muse is a **highly-opinionated midwestern self-hosted Discord music bot that doesn't suck**. Built for small to medium-sized Discord servers, it supports livestreams, seeking, local caching, Spotify conversion, and multi-guild support — all from a single Railway service with a persistent volume.
 

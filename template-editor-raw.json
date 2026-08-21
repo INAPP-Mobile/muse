@@ -1,0 +1,42 @@
+{
+  "DISCORD_TOKEN": {
+    "value": "your-discord-bot-token",
+    "description": "Discord bot token. Create an application at https://discord.com/developers/applications, add a Bot, then copy its token."
+  },
+  "DISCORD_CLIENT_ID": {
+    "value": "1000000000000000001",
+    "description": "Discord application client ID (Developer Portal -> General Information -> Application ID). Used to build the bot invite link."
+  },
+  "DISCORD_CLIENT_SECRET": {
+    "value": "your-discord-client-secret",
+    "description": "Discord application client secret. Optional — only used to generate an OAuth2 invite link."
+  },
+  "YOUTUBE_API_KEY": {
+    "value": "your-youtube-api-key",
+    "description": "YouTube Data API v3 key from https://console.cloud.google.com/apis/credentials. Required for YouTube search and playback."
+  },
+  "YOUTUBE_COOKIE": {
+    "value": "CONSENT=YES+cb; VISITOR_INFO1_LIVE=XXXXXXXXXXX; YSC=XXXXXXXXXXX",
+    "description": "YouTube cookies string. Optional — may help with age-restricted videos."
+  },
+  "SPOTIFY_CLIENT_ID": {
+    "value": "00000000000000000000000000000000",
+    "description": "Spotify API client ID. Optional — enables resolving Spotify tracks, albums and playlists."
+  },
+  "SPOTIFY_CLIENT_SECRET": {
+    "value": "00000000000000000000000000000000",
+    "description": "Spotify API client secret. Optional — required only if SPOTIFY_CLIENT_ID is set."
+  },
+  "DATA_DIR": {
+    "value": "/data",
+    "description": "Directory holding the SQLite database and audio cache. Must match the mount path of the attached Railway Volume."
+  },
+  "CACHE_LIMIT": {
+    "value": "2GB",
+    "description": "Maximum disk space used by the audio cache, e.g. 2GB. Keep below your Railway Volume size."
+  },
+  "ENABLE_SPONSORBLOCK": {
+    "value": "false",
+    "description": "Skip YouTube sponsor segments using SponsorBlock data. Set to true to enable."
+  }
+}
