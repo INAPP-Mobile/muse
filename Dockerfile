@@ -9,7 +9,7 @@
 # /data to persist them. A docker VOLUME instruction is deliberately NOT used:
 # the Railway builder rejects it ("docker VOLUME ... is not supported").
 
-FROM ghcr.io/museofficial/muse:2.11.7-yt-dlp
+FROM ghcr.io/museofficial/muse:2.11.8-yt-dlp
 
 # Upstream image sets WORKDIR /usr/app; dist/ and node_modules resolve from there.
 WORKDIR /usr/app
