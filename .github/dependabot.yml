@@ -1,7 +1,7 @@
 version: 2
 
 updates:
-  # muse discord bot — pinned base image (ghcr.io/museofficial/muse:2.11.7-yt-dlp)
+  # muse discord bot — pinned base image (ghcr.io/museofficial/muse:2.11.8-yt-dlp)
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
